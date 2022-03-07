@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pesquisa sobre manipulação de DOM</h1>
+    <div class="DOM-explanation">
+        <h2>O que é DOM?</h2>
+        <span>
+            DOM é a sigla em inglês para Document Object Model, que significa modelo de documento por objetos.
+            É uma interface padronizada que permite que navegadores e scripts possam manipular o 
+            conteúdo de uma página web.
+            É ele, ainda, que põe ordem na navegação web para que o conteúdo fique acessível a todos.
+        </span>
+        <h2>Mais um modo de explicar</h2>
+        <span>
+            Ele é utilizado pelo navegador para representar a sua página Web.
+            É ele que fornece uma representação estruturada do documento como se fosse uma espécie de árvore com galhos,
+             definindo métodos para que possam ser alterados estrutura, estilo e conteúdo do documento.
+        </span>
+        <img src="DOM.png" alt="">
+    </div>
+    <div class="DOM-explanation">
+        <h2>Mas o que são esses nomes listados na imagem?</h2>
+        <span>
+            Uma página da Web é um documento. Este documento pode ser exibido na janela do navegador ou como a fonte HTML.
+            Mas é o mesmo documento nos dois casos. O DOM representa o mesmo documento para que possa ser manipulado.
+            O DOM é uma representação orientada a objetos da página da web, que pode ser modificada com uma linguagem de script como JavaScript.
+        </span>
+        <h2>Mais um complemento</h2>
+        <span>
+            O objeto window representa uma janela que contém um elemento DOM;
+            a propriedade document aponta para o documento DOM document carregado naquela janela.
+            Uma janela para um dado documento pode ser obtido usando a propriedade <b>document.defaultView.</b>
+        </span>
+        <h2>Vou explicar os principais um a um</h2>
+        <div class="DOM-explanation">
+            <ul>
+                <li>
+                    <div>
+                        <h3>Document</h3>
+                        <span>
+                            Quando um membro retorna um objeto do tipo document(por exemplo,
+                            uma propriedade ownerDocument de um elemento ou documentao qual ele pertence),
+                            retornaesse objeto é o próprio objeto de  documentraiz.
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Node</h3>
+                        <span>
+                            Todo objeto localizado em um documento é um nó de tipo algum. Em um documento HTML,
+                            um objeto pode ser um nó de elemento, mas também um nó de texto ou atributo.
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+
+                        <h3>Element</h3>
+                        <span>
+                            O tipo do elementé baseado em node. Isso se refere a um elemento ou um nó do tipo elementretornado por um membro da API DOM.
+                            Ao invés de dizer, por exemplo, que o método document.createElement()  retorna um objeto de referência para um nó, 
+                            nós apenas dizemos que esse método retorna o elementque acabou de ser criado no DOM.
+                            Os objetos element  implementam uma interface DOM Elemente também uma interface Nodebásica,
+                            sendo ambas incluídas nesta referência. Em um documento HTML, os elementos são ainda mais aprimorados pelas APIs HTML DOM.
+                        </span>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="DOM-JS">
+        <h2>Dom e JavaScript</h2>
+        <span>
+            O DOM não é uma linguagem de programação, mas sem ela, a linguagem JavaScript não teria nenhum modelo ou noção de páginas da web,
+            documentos HTML, documentos XML e suas partes componentes (por exemplo, elementos).
+            Cada elemento de um documento - o documento como um todo, o cabeçalho, as tabelas do documento, os cabeçalhos da tabela,
+            o texto nas células da tabela - faz parte do modelo de objeto do documento desse documento,
+            para que todos possam ser acessados e manipulados usando o método DOM e uma linguagem de script como JavaScript.
+
+        </span>
+        <span>
+            No início, o JavaScript e o DOM estavam fortemente interligados, mas, eventualmente, evoluíram para entidades separadas.
+            O conteúdo da página é armazenado no DOM e pode ser acessado e manipulado via JavaScript,
+            para que possamos escrever esta equação aproximada:
+        </span>
+        <h2>Como identificar elementos a partir do DOM pelo JavaScript?</h2>
+        <span>
+            para o DOM ser selecionado e acessado pelo JavaScript, o HTML precisa de identificadores,
+            a partir deles podemos achar os itens a serem modificados
+            Essas propriedades são chamadas de atributos
+            <h3>Os principais atributos são: <b>Id</b>,
+            <b>Class</b> e <b>Name</b>
+            <p></p>
+        </span>
+        <span>
+            Os atributos são organizados dentro das tags, as tags são como recipientes semânticos,
+            ou seja, eles são responsaveis por organizar os conteúdos HTML, cada tipo de conteúdo com sua tag e seu valor semântico
+        </span>
+        <ul>
+            <li>
+                <b>id:</b> É um identificador único de elemento, ou seja, apenas um elemento pode ter essa identificação, ele pode ser usado dentro da tag
+                desta maneira => id="identificador"
+            </li>
+            <li>
+                <b>Name:</b> Deve ser usado principalmente para identificar campos de formulários.
+                Sempre que realizamos um “submit” de um formulário, o atributo NAME é o identificador dentro de uma requisição GET ou POST no servidor.
+            </li>
+            <li>
+                <b>Class:</b> As classes são agrupadores,
+                os elementos que tem o mesmo comportamento e não precisam de exclusividade podem ser agrupadas por uma classe
+            </li>
+        </ul>
+        <h2>Como selecionar o DOM pelo JavaScript?</h2>
+        <span>
+            Depois de organizar os identificadores (atributos) dentro de suas respectivas tags,
+            é possivel acessar qualquer elemento desejado que contenha um identificador, através do JavaScript!
+        </span>
+        <h3>exemplos:</h3>
+        <div class="exemplos">
+            <div class="exemplo-classe">
+                <button class="botão-classe" onclick="PegaPelaClasse()">Clique aqui para acessar pelo atributo Class</button>
+            </div>
+            <div id="exemplo-id">
+                <button id="botão-id" onclick="pegaPeloId()">Clique aqui para acessar pelo atributo Id</button>
+            </div>
+            <div class="exemplo-tudo">
+                <button class="botão-classe" onclick="pegaNodeList()">Clique aqui para acessar os tres elementos</button>
+            </div>
+        </div>
+    </div>
+    <div class="DOM-JS">
+        <h2>Como acessar o DOM pelo JavaScript?</h2>
+        <h3>
+            Existem diferentes jeitos de acessar um elemento depois que selecionamos ele, por exemplo:
+        </h3>
+        <ul>
+            <li>
+                <b>innerText =></b> 
+                innerText é uma propriedade que representa o conteúdo textual "renderizado" de um nó e seus descendentes. Usada como getter,
+                retorna de maneira aproximada o texto que o usuário obteria caso tivesse selecionado o conteúdo e copiado para a área de transferência.
+                <p>innerText -> Retorna somente o texto, sem formatações ou elementos html.</p>
+            </li>
+            <li>
+
+                <b>innerHTML =></b> 
+                innerHTML define ou obtém a sintaxe HTML ou XML descrevendo os elementos descendentes.
+                <p>innerHtml -> Retorna o texto, COM formatações e COM elementos html.</p>
+            </li>
+            <li>
+
+                <b>textContent =></b> A propriedade textContent da interface Node representa o conteúdo de texto de um nó e dos seus descendentes.
+                <p>textContent -> Retorna o text COM formatações, mas sem os elementos html.
+
+                </p>
+            </li>
+        </ul>
+        <h3>Exemplo prático:</h3>
+        <button onclick="pegaInnerHtml()">Escreva um texto para ser adicionado abaixo</button>
+        <div class="quadro-branco1"><span>Pelo innerHTML</span></div>
+
+        <button onclick="pegaTextContent()">Escreva um texto para ser adicionado abaixo</button>
+        <div class="quadro-branco2"><span>Pelo textContent</span></div>
+
+        <button onclick="pegaInnerText()">Escreva um texto para ser adicionado abaixo</button>
+        <div class="quadro-branco3"><span>Pelo innerText</span></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
