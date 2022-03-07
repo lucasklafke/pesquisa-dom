@@ -22,7 +22,7 @@ function PegaPelaClasse(){
     <span>Você selecionou este elemento e mudou o seu fundo para marrom pelo JavaScript!</span>
     <span>Foi possível acessar esse elemento por meio de um seletor chamado querySelector(),
     para acessar um elemento você tem que procurar ele dentro do document desta maneira: document.querySelector()</span>
-    <span>dentro do parâmetro do seletor nós inserimos a classe, desta maneira:document.querySelector(Class)</span>
+    <span>dentro do parâmetro do seletor nós inserimos a classe, desta maneira:document.querySelector('.Class')</span>
     `
 }
 function pegaNodeList(){
@@ -36,8 +36,11 @@ function pegaNodeList(){
     <span>Você selecionou todos os elementos e mudou o fundo para preto pelo JavaScript!</span>
     <span>Foi possível acessar esses elementos por meio de um seletor chamado querySelectorAll(),
     para acessar todos os elementos você tem que procurar eles dentro do document desta maneira: document.querySelectorAll()</span>
-    <span>dentro do parâmetro do seletor nós inserimos a classe em comum, desta maneira:document.querySelector(Class)</span>
-    `
+    <span>dentro do parâmetro do seletor nós inserimos a classe em comum, desta maneira:document.querySelectorAll('.Class')</span>
+    <span>Você recebera uma NodeList para acessar os elementos dentro dela</span>
+    <h3>NodeList<h3>
+    <span>Um NodeList objeto é uma lista (coleção) de nós extraídos de um documento.</span>
+    ` 
 }
 
 function pegaInnerHtml(){
